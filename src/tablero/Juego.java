@@ -109,15 +109,30 @@ public class Juego {
             // POR IMPLEMENTAR
             buttons = new JButton[nf][nc];
             JPanel panelTablero = new JPanel();
+
             for (int i = 0; i < nf; i++) {
+				JLabel numeros = new JLabel();
+				
+				numeros.setText(String.valueOf(i));
+				panelTablero.add(numeros);
                 for (int j = 0; j < nc; j++) {
+                	/*if(i == 0) {
+						JLabel vertical = new JLabel();
+						vertical.setText(String.valueOf(j));
+						panelTablero.add(vertical);
+					}*/
                     JButton btnNuevo = new JButton();
-                    btnNuevo.setSize(50,50);
                     panelTablero.add(btnNuevo);
+
+                    panelTablero.setLayout(new GridLayout(nf,nc,0,0));
                     frame.add(panelTablero);
+
                     buttons[i][j] = btnNuevo;
 
                 }
+				JLabel numeros2 = new JLabel();
+				numeros2.setText(String.valueOf(i));
+				panelTablero.add(numeros2);
             }
 		} // end anyadeGrid
 
@@ -167,8 +182,8 @@ public class Juego {
 		public void pintaBoton(JButton b, Color color) {
 			b.setBackground(color);
 			// El siguiente código solo es necesario en Mac OS X
-			b.setOpaque(true);
-			b.setBorderPainted(false);
+			//b.setOpaque(true);
+			//b.setBorderPainted(false);
 		} // end pintaBoton
 
 		/**
